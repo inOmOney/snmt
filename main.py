@@ -2,6 +2,7 @@ import time
 import re
 import os
 from src.Control import Control
+
 con = Control()
 
 if __name__ == '__main__':
