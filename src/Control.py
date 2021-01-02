@@ -77,7 +77,8 @@ class Control(object):
                 4. preBuyCallback({"status":0,"code":"006","message":"您已预约过,无需重复预约！","newCode":"006","newMessage":"您已预约过,无需重复预约！","value":{"rushStartTime":"2020-12-25 09:30:00","phoneNumber":"","primaryName":"查看我的预约","primaryUrl":"https://yushou.suning.com/appoint/myAppoint.do","secondaryName":"","secondaryUrl":""}})
                 5. '{"status":0,"code":"-1","message":"预约失败，请您重试！[015]","newCode":null,"newMessage":null,"value":null}
                 """
-                m_url = 'https://yushou.suning.com/jsonp/appoint/gotoAppoint_202012240023_000000011001203841_0000000000_P01_2_submissionAppointments.do'
+                #m_url = 'https://yushou.suning.com/jsonp/appoint/gotoAppoint_202012240023_000000011001203841_0000000000_P01_2_submissionAppointments.do'
+                m_url = 'https://yushou.suning.com/jsonp/appoint/gotoAppoint_202012310018_000000011001203841_0000000000_P01_1_preBuyCallback.do'
                 headers = {
                     'Host': 'yushou.suning.com',
                     'Connection': 'Keep-Alive',
@@ -184,6 +185,11 @@ class Control(object):
         resp = self.session.post(url=url, headers=headers, data=data2)
         print(1)
 
+    def buy_1(self):
+        url = 'https://shopping.suning.com/app/addcart/private/quickBuy.do'
+        data = "data=%7B%22cartHeadInfo%22%3A%7B%22userFlag%22%3A%220%22%2C%22directFlag%22%3A%221%22%2C%22operationChannel%22%3A%2250%22%2C%22operationTerminal%22%3A%2201%22%2C%22operationEquipment%22%3A%2202%22%2C%22operationUser%22%3A%22%22%2C%22token%22%3A%22d88392aa-0483-48e0-ad5f-5e0c9a09a273%22%2C%22detect%22%3A%22mmds_a_._907fe204-f4aa-4dfe-b49e-98f80685b8f0_._bEEE33YI4TK7h43333cb301333333333Yh433YsGb3013333YI4TK7h4313-cDS013333YI4hlZh433YXGDS0133333mYSvs3333Ff533333333YI4TlBaw33-PcaH013333YI4g1gaw33YcGaH013333YI4TlBaw33YGcaH013333YI4g1gaw33YgGaH013333YI4TlBaw33Y4caH013333YI4g1gaw33D_GaH013333YI4TlBaw33YHcaH013333YI4g1gaw33YJGaH013333YI4TlBaw33YvcaH013333YI4g1gaw333NGaH013333YI4TlBaw33Y8caH013333YI4g1gaw33YXGaH013333YI4TlBaw33YZcaH013333YI4g1gaw333zGaH0133333HpS_u3333mn533333333YI4TK7hJ3FTOcDs013333YI4hlZhJ33YXGDs0133333mYSvs3333Fs5333333333HpS_u3333t4533333333YI4TK7hZ3VxicFb013333YI4hlZhZ33YbGFb0133333mYSvs3333Fv533333333YI4TlB0o33KMcah013333YI4g1g0o33YlGah013333YI4TlB0o33Yncah013333YI4g1g0o33Y3Gah013333YI4TlB0o33Yvcah013333YI4g1g0o333-Gah0133333HpS_u33X4jM533333333YI4TK7hF3Ye1cXr01333333333YhF333oGXr0133333lZ5V.333Ydm533333333YI4ilBh433oGcbd013333YI4ilBh9333RGbd0133333HpS_u3333RB533333333YI4TK7hL3Y7tcXb01333333333YhL333BGXb0133333lZ5V.333YDj533333333YI4j3oTc3YuvcaLf_3333YI4hzNcM330fGaLf_3333YI4TKeVs33TTcbnf_3333YI4hzNk53303Gbnf_3333YI4ilBhh33FKcbA013333YI4ilBhh333yGbA013333YI4ilBgW3Gbvcau013333YI4ilBgW333.Gau0133333HpS_u334NBp533333333YI4TK7Hh3FFwc0e013333YI4hesbF33bYG0p013333YI4TK7eJ33a8c9h013333YI4hesbq334bG9F013333YI4TK7Gi33bycF6013333YI4hesaP33F6G9H013333YI4TK7X.33bRc9u013333YI4hesGx33DpG9u013333YI4TK7ax33Xjc9N013333YI4hesGJ33YYG95013333YI4TK7bw33eIcXs013333YI4jwabT334BGDj013333YI4TK7bF339TcF9013333YI4jwqaW33YmG3_013333YI4TK7hlYFdic9z01333333333Yhl33YTG9z0133333lZ5V.33337K533333333YI4ir8dK4xbqcXrf_3333YI4hzNTM33XSGXrf_333333333YdQ33DfcXrf_3333YI4hzNDT33f3GXrf_333333333YdQ33FTcXrf_3333YI4hzNXR330rGXrf_333333333YdQ334WcXrf_3333YI4hzNa_3306GXrf_33333HpS_u333xn5533333333YI4TK7hl33SbcXK01333333333Yhl33YFGXK0133EEEUBNoNK2vlmEEE344Z3Xl3AZg3GlleghGXVgxemxAXAx4GEEEAT4T4xR4tzEEEbXXREEE4EEEXRReexG3EEEXExEGEEE4xTexTXeXxT4TEEERTTAAxe33GEEEa1dd20eac1888bce3e199b0dd2909382%22%2C%22dfpToken%22%3A%22TFd009TbTRkSckqnRU7RXa732___w7DDqcKqw74Two0ZbMOxKmfCr8OND8OKw7tfwqvCtcOk%22%2C%22operationStoreCode%22%3A%22%22%2C%22provinceCode%22%3A%22120%22%2C%22cityCode%22%3A%22531%22%2C%22districtCode%22%3A%2253111%22%2C%22townCode%22%3A%225311101%22%2C%22logContent%22%3A%22%22%2C%22appTerminalVersions%22%3A%229.5.4%22%2C%22appVersions%22%3A%2201%22%2C%22destLongitude%22%3A%22117.688793%22%2C%22destLatitude%22%3A%2236.202857%22%2C%22productPageType%22%3A%22%22%2C%22channelType%22%3A%2202%22%7D%2C%22historyReceiverInfo%22%3A%7B%22addrNum%22%3A%223%22%7D%2C%22historyPayType%22%3A%7B%22payType%22%3A%22%22%2C%22payPeriods%22%3A%22%22%7D%2C%22immediateBuyItems%22%3A%5B%7B%22itemHeadInfo%22%3A%7B%22itemNo%22%3A%221%22%2C%22activityType%22%3A%2202%22%2C%22activityId%22%3A%2223312458%22%2C%22subActivityType%22%3A%221%22%7D%2C%22mainCmmdtyInfo%22%3A%7B%22basicInfo%22%3A%7B%22itemNo%22%3A%221%22%2C%22cmmdtyCode%22%3A%22000000011190081412%22%2C%22shopCode%22%3A%220000000000%22%2C%22shopAddCode%22%3A%220030000756%22%2C%22shopName%22%3A%22%E8%8B%8F%E5%AE%81%E8%87%AA%E8%90%A5%22%2C%22overSeasFlag%22%3A%22%22%2C%22cmmdtyQty%22%3A%222%22%2C%22serviceStoreCode%22%3A%22%22%2C%22serviceStoreName%22%3A%22%22%2C%22commodityType%22%3A%22%22%2C%22carShopSerWay%22%3A%22%22%2C%22isOneHour%22%3A%22%22%2C%22productType%22%3A%22%22%2C%22platform%22%3A%2201%22%7D%2C%22collect%22%3A%5B%7B%22collectSort%22%3A%2210%22%2C%22collectType%22%3A%2213%22%2C%22collectCode%22%3A%22pgcate%3D10008%3Bprdtp%3D00027%3Btag%3D%E5%9B%9B%E7%BA%A7%E9%A1%B5%3Bpgtitle%3D%E5%9B%9B%E7%BA%A7%E9%A1%B5%3Bprdid%3D000000011190081412%3Bshopid%3D0030000756%3Bsupid%3D0010313348%22%7D%2C%7B%22collectSort%22%3A%2210%22%2C%22collectType%22%3A%2212%22%2C%22collectCode%22%3A%22page_id%3D140%3Bmod_id%3D22%3Beleid%3D140003180%3Bsite_id%3D2cd5ed46%22%7D%5D%7D%7D%5D%2C%22supportYB%22%3A%221%22%2C%22publishDate%22%3A%2220201215%22%7D"
+
+
 
     def main(self, num):
         if num == '1':
@@ -192,8 +198,6 @@ class Control(object):
             self.reserve()
         elif num == '2':
             self.jqtime = str(int(time.time() * 1000))
-            #self.get_cart_vo()
-            #self.buy()
             self.login()
-            #self.tbuy()
-            self.cbuy()
+            self.buy_1()
+
